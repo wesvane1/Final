@@ -2,7 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
-  const result = await mongodb.getDb().db().collection('journalE').find();
+  const result = await mongodb.getDb().db().collection('users').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -30,7 +30,7 @@ const createSingle = async (req, res) => {
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday
   };
-  const response = await mongodb.getDb().db().collection('journalE').insertOne(contact);
+  const response = await mongodb.getDb().db().collection('users').insertOne(contact);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
@@ -48,7 +48,7 @@ const updateSingle = async (req, res) => {
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday
   };
-  const response = await mongodb.getDb().db().collection('journalE').replaceOne({ _id: userId }, contact);
+  const response = await mongodb.getDb().db().collection('users').replaceOne({ _id: userId }, contact);
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).send();
@@ -59,7 +59,7 @@ const updateSingle = async (req, res) => {
 
 const deleteSingle = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('journalE').deleteOne({ _id: userId }, true);
+  const response = await mongodb.getDb().db().collection('users').deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();
