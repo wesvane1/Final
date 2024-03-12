@@ -23,7 +23,8 @@
     },
     "/entries/getAll": {
       "get": {
-        "description": "",
+        "tags": "Journal",
+        "description": "This gets all journal entries that you have",
         "produces": [
           "application/json"
         ],
