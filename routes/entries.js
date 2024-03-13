@@ -1,10 +1,18 @@
-const routes = require('express').Router();
-const entryController = require('../controllers/entries');
+const router = require('express').Router();
+const { requiresAuth } = require('express-openid-connect');
 
-routes.get('/getAll', entryController.getAll);
-routes.get('/getSingle/:id', entryController.getSingle);
-routes.post('/createSingle', entryController.createSingle);
-routes.put('/updateSingle/:id', entryController.updateSingle);
-routes.delete('/deleteSingle/:id', entryController.deleteSingle);
+const entryController = require('../controllers/users');
+// const validation = require('../middleware/validate');
 
-module.exports = routes;
+router.get('/getAll', requiresAuth(), entryController.getAll);
+
+router.get('/getSingle/:id', requiresAuth(), entryController.getSingle);
+
+router.post('/createSingle', requiresAuth(), entryController.createSingle);
+
+router.put('/updateSingle/:id', requiresAuth(), entryController.updateSingle);
+
+router.delete('/deleteSingle/:id', requiresAuth(), entryController.deleteSingle);
+
+
+module.exports = router;
