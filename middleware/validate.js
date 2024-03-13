@@ -2,8 +2,8 @@ const validator = require('../helpers/validate');
 
 const saveEntry = (req, res, next) => {
   const validationRule = {
-    entry_body: 'required|string',
-    one_word: 'required|string',
+    entryBody: 'required|string',
+    oneWord: 'required|string',
     tags: 'required|string',
     weather: 'required|string',
     feeling: 'required|string'

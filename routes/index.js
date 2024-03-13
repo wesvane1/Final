@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { auth } = require('express-openid-connect');
+const { auth, requiresAuth } = require('express-openid-connect');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -18,8 +18,11 @@ router.get('/checkLoginStatus', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
+router.get('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+});
 
-// router.use('/', require('./swagger'))
+router.use('/entry', require('./entries'));
 router.use('/users', require('./users'));
 
 module.exports = router;
