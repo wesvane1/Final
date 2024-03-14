@@ -24,5 +24,7 @@ router.get('/profile', requiresAuth(), (req, res) => {
 
 router.use('/entry', require('./entries'));
 router.use('/users', require('./users'));
+router.use('/favorites', require('./favorites'));
+router.use('/comments', require('./comments'));
 
 module.exports = router;

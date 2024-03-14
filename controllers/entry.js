@@ -16,7 +16,7 @@ const getSingle = async (req, res, next) => {
   if (!ObjectId.isValid(req.params.id)){
     res.status(400).json('Must use a valid id to find an entry.');
   }
-  centryId = new ObjectId(req.params.id);
+  entryId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db().collection('journalE').find({ _id: entryId });
   result.toArray().then((err, lists) =>{
     if (err){
@@ -67,9 +67,7 @@ const updateSingle = async (req, res) => {
   if (response.modifiedCount > 0) {
     res.status(204).send();
   } else {
-    res
-      .status(500)
-      .json(response.error || 'An error occurred and we were not able to update your entry.');
+    res.status(500).json(response.error || 'An error occurred and we were not able to update your entry.');
   }
 };
 
@@ -79,7 +77,6 @@ const deleteSingle = async (req, res) => {
   }
   const entryId = new ObjectId(req.params.id);
   const response = await mongodb.getDb().db().collection('journalE').deleteOne({ _id: entryId }, true);
-  console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();
   }

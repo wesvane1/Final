@@ -21,6 +21,24 @@ const saveEntry = (req, res, next) => {
   });
 };
 
+const saveComm = (req, res, next) => {
+  const validationRule = {
+    entryBody: 'required|string',
+    why: 'required|string'
+  };
+  validator(req.body, validationRule, {}, (err, status) =>{
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else{
+      next();
+    }
+  });
+};
+
 const saveUser = (req, res, next) => {
   const validationRule = {
     name: 'required|string',
@@ -41,5 +59,6 @@ const saveUser = (req, res, next) => {
 
 module.exports = {
   saveEntry,
+  saveComm,
   saveUser
 };
