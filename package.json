@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "swagger": "node ./swagger.js"
+    "swagger": "node ./swagger.js",
+    "test": "jest --watch --coverage"
   },
   "keywords": [],
   "author": "",
@@ -18,12 +18,14 @@
     "express": "^4.18.3",
     "express-openid-connect": "^2.17.1",
     "express-validator": "^7.0.1",
-    "mongodb": "^6.5.0",
     "swagger-ui-express": "^5.0.0",
     "validatorjs": "^3.22.1"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^9.1.7",
     "nodemon": "^3.1.0",
+    "supertest": "^6.3.4",
     "swagger-autogen": "^2.23.7"
   }
 }
