@@ -4,15 +4,15 @@ const { requiresAuth } = require('express-openid-connect');
 const favController = require('../controllers/favorites');
 const validation = require('../middleware/validate');
 
-router.get('/getAll', requiresAuth(), favController.getAll);
+router.get('/getAll', favController.getAll);
 
-router.post('/createSingle', requiresAuth(), validation.saveEntry, favController.createSingle);
+router.post('/createSingle', validation.saveEntry, favController.createSingle);
 
-router.put('/moveToFav/:id', requiresAuth(), favController.moveToFav);
+router.put('/moveToFav/:id', favController.moveToFav);
 
-router.put('/moveFromFav/:id', requiresAuth(), favController.moveFromFav);
+router.put('/moveFromFav/:id', favController.moveFromFav);
 
-router.delete('/deleteSingle/:id', requiresAuth(), favController.deleteSingle);
+router.delete('/deleteSingle/:id', favController.deleteSingle);
 
 
 module.exports = router;

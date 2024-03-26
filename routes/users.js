@@ -5,14 +5,14 @@ const { requiresAuth } = require('express-openid-connect');
 const userController = require('../controllers/users');
 const validation = require('../middleware/validate');
 
-router.get('/getAll/', requiresAuth(), userController.getAll);
+router.get('/getAll/', userController.getAll);
 
-router.get('/getSingle/:id', requiresAuth(), userController.getSingle);
+router.get('/getSingle/:id', userController.getSingle);
 
-router.post('/createSingle/', requiresAuth(), validation.saveUser, userController.createSingle);
+router.post('/createSingle/', validation.saveUser, userController.createSingle);
 
-router.put('/updateSingle/:id', requiresAuth(), validation.saveUser, userController.updateSingle);
+router.put('/updateSingle/:id', validation.saveUser, userController.updateSingle);
 
-router.delete('/deleteSingle/:id', requiresAuth(), userController.deleteSingle);
+router.delete('/deleteSingle/:id', userController.deleteSingle);
 
 module.exports = router;
