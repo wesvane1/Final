@@ -1,0 +1,84 @@
+# Get profile
+GET https://cse341final-qxbx.onrender.com/api-docs/#/default/get_profile
+
+# Get login status
+GET checklogin status: https://cse341final-qxbx.onrender.com/api-docs/#/default/get_checkLoginStatus
+
+# # # ALL ROUTES FOR JOURNAL ENTRY START:
+
+# Get all entries
+GET all entries: https://cse341final-qxbx.onrender.com/api-docs/#/default/get_entry_getAll
+
+# Get single entry
+GET single entry: https://cse341final-qxbx.onrender.com/api-docs/#/default/get_entry_getSingle__id_/65f1f1f31c2b4b87b523a290
+
+# Get all entries
+GET https://cse341final-qxbx.onrender.com/api-docs/#/default/get_entry_getAll
+
+# Create single entry
+POST https://cse341final-qxbx.onrender.com/api-docs/#/default/post_entry_createSingle
+
+# Update single entry
+PUT https://cse341final-qxbx.onrender.com/api-docs/#/default/put_entry_updateSingle__id_/65f1f1f31c2b4b87b523a290
+
+# Delete single entry
+DELETE https://cse341final-qxbx.onrender.com/api-docs/#/default/delete_entry_deleteSingle__id_/65f1f1f31c2b4b87b523a290
+
+# # # ALL ROUTES FOR JOURNAL ENTRY END:
+
+
+# # # ALL ROUTES FOR USERS START:
+
+# Get all users
+GET https://cse341final-qxbx.onrender.com/api-docs/#/default/get_users_getAll_
+
+# Get sinle user
+GET https://cse341final-qxbx.onrender.com/api-docs/#/default/get_users_getSingle__id_/65f0bebe926d5cf2b11cb3d0
+
+# Create single user
+POST https://cse341final-qxbx.onrender.com/api-docs/#/default/post_users_createSingle_
+
+# Update single user
+PUT https://cse341final-qxbx.onrender.com/api-docs/#/default/put_users_updateSingle__id_/65f0bebe926d5cf2b11cb3d0
+
+# Delete single user
+DELETE https://cse341final-qxbx.onrender.com/api-docs/#/default/delete_users_deleteSingle__id_/65f0bebe926d5cf2b11cb3d0
+
+# # # ALL ROUTES FOR USERS END:
+
+
+# # # ALL ROUTES FOR FAVORITES START:
+
+# Get all favorites
+GET https://cse341final-qxbx.onrender.com/api-docs/#/default/get_favorites_getAll
+
+# Create single favorite entry
+POST https://cse341final-qxbx.onrender.com/api-docs/#/default/post_favorites_createSingle
+
+# Move entry to favorites
+PUT https://cse341final-qxbx.onrender.com/api-docs/#/default/put_favorites_moveToFav__id_/65f1f1f31c2b4b87b523a290
+
+# Move entry from favorites
+PUT https://cse341final-qxbx.onrender.com/api-docs/#/default/put_favorites_moveFromFav__id_/65f23087f0c9b5f22a5952d4
+
+# Delete single favorite
+DELETE https://cse341final-qxbx.onrender.com/api-docs/#/default/delete_favorites_deleteSingle__id_
+
+# # # ALL ROUTES FOR FAVORITES END:
+
+
+# # # ALL ROUTES FOR COMMENTS START:
+
+# Get all comments
+GET https://cse341final-qxbx.onrender.com/api-docs/#/default/get_comments_getAll
+
+# Create single comment
+POST https://cse341final-qxbx.onrender.com/api-docs/#/default/post_comments_createSingle
+
+# Update a single comment
+PUT https://cse341final-qxbx.onrender.com/api-docs/#/default/put_comments_updateSingle__id_/660d91d20cbd54cf85026160
+
+# Delete single comment
+DELTE https://cse341final-qxbx.onrender.com/api-docs/#/default/delete_comments_deleteSingle__id_/660d91d20cbd54cf85026160
+
+# # # ALL ROUTES FOR COMMENTS END:
