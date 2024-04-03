@@ -13,6 +13,10 @@ const config = {
   issuerBaseURL: process.env.ISSUER_BASE_URL
 }
 
+router.use(auth(config));
+router.get('/checkLoginStatus', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
 
 router.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user));
@@ -23,9 +27,5 @@ router.use('/users', require('./users'));
 router.use('/favorites', require('./favorites'));
 router.use('/comments', require('./comments'));
 
-router.use(auth(config));
-router.get('/checkLoginStatus', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-});
 
 module.exports = router;
