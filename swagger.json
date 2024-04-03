@@ -34,6 +34,7 @@
     "/entry/getAll": {
       "get": {
         "description": "",
+        "tags": ["Journal"],
         "produces": [
           "application/json"
         ],
@@ -50,6 +51,7 @@
     "/entry/getSingle/{id}": {
       "get": {
         "description": "",
+        "tags": ["Journal"],
         "produces": [
           "application/json"
         ],
@@ -74,6 +76,7 @@
     "/entry/createSingle": {
       "post": {
         "description": "",
+        "tags": ["Journal"],
         "parameters": [
           {
             "name": "body",
@@ -116,6 +119,7 @@
     "/entry/updateSingle/{id}": {
       "put": {
         "description": "",
+        "tags": ["Journal"],
         "parameters": [
           {
             "name": "id",
@@ -167,6 +171,7 @@
     "/entry/deleteSingle/{id}": {
       "delete": {
         "description": "",
+        "tags": ["Journal"],
         "parameters": [
           {
             "name": "id",
@@ -191,6 +196,7 @@
     "/users/getAll/": {
       "get": {
         "description": "",
+        "tags": ["Users"],
         "produces": [
           "application/json"
         ],
@@ -207,6 +213,7 @@
     "/users/getSingle/{id}": {
       "get": {
         "description": "",
+        "tags": ["Users"],
         "produces": [
           "application/json"
         ],
@@ -231,6 +238,7 @@
     "/users/createSingle/": {
       "post": {
         "description": "",
+        "tags": ["Users"],
         "parameters": [
           {
             "name": "body",
@@ -264,6 +272,7 @@
     "/users/updateSingle/{id}": {
       "put": {
         "description": "",
+        "tags": ["Users"],
         "parameters": [
           {
             "name": "id",
@@ -306,6 +315,7 @@
     "/users/deleteSingle/{id}": {
       "delete": {
         "description": "",
+        "tags": ["Users"],
         "parameters": [
           {
             "name": "id",
@@ -330,6 +340,7 @@
     "/favorites/getAll": {
       "get": {
         "description": "",
+        "tags": ["Favorites"],
         "produces": [
           "application/json"
         ],
@@ -346,6 +357,7 @@
     "/favorites/createSingle": {
       "post": {
         "description": "",
+        "tags": ["Favorites"],
         "parameters": [
           {
             "name": "body",
@@ -388,6 +400,7 @@
     "/favorites/moveToFav/{id}": {
       "put": {
         "description": "",
+        "tags": ["Favorites"],
         "parameters": [
           {
             "name": "id",
@@ -412,6 +425,7 @@
     "/favorites/moveFromFav/{id}": {
       "put": {
         "description": "",
+        "tags": ["Favorites"],
         "parameters": [
           {
             "name": "id",
@@ -436,6 +450,7 @@
     "/favorites/deleteSingle/{id}": {
       "delete": {
         "description": "",
+        "tags": ["Favorites"],
         "parameters": [
           {
             "name": "id",
@@ -460,6 +475,7 @@
     "/comments/getAll": {
       "get": {
         "description": "",
+        "tags": ["Comments"],
         "produces": [
           "application/json"
         ],
@@ -476,6 +492,7 @@
     "/comments/createSingle": {
       "post": {
         "description": "",
+        "tags": ["Comments"],
         "parameters": [
           {
             "name": "body",
@@ -509,6 +526,7 @@
     "/comments/updateSingle/{id}": {
       "put": {
         "description": "",
+        "tags": ["Comments"],
         "parameters": [
           {
             "name": "id",
@@ -551,6 +569,7 @@
     "/comments/deleteSingle/{id}": {
       "delete": {
         "description": "",
+        "tags": ["Comments"],
         "parameters": [
           {
             "name": "id",
